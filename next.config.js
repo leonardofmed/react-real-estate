@@ -9,9 +9,6 @@ const nextConfig = {
         port: ''
       }
     ]
-  },
-  env: {
-    BAYUT_API_KEY: 'a34d19b454msha88cf41bca3a42ap1e1244jsnd1d375cc711b'
   }
 }
 
