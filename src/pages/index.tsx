@@ -33,7 +33,6 @@ const Banner = (props: BannerProps) => (
 export default function Home({ propertiesForSale, propertiesForRent } : any) {
   return (
     <Box>
-      <h1>Hello World!</h1>
       <Banner
         purpose="BUY A HOME"
         title1="Find, Buy & Own Your"
