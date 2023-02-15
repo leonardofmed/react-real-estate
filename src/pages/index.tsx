@@ -16,15 +16,15 @@ interface BannerProps {
   buttonText: string
 }
 
-const Banner = (props: BannerProps) => (
+const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }: BannerProps) => (
   <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
-    <Image src={props.imageUrl} width={500} height={500} alt="banner"></Image>
+    <Image src={imageUrl} width={500} height={500} alt="banner"></Image>
     <Box p={5}>
-      <Text color="gray.500" fontSize="sm" fontWeight={"medium"}>{props.purpose}</Text>
-      <Text fontSize="3x1" fontWeight="bold">{props.title1}<br /> {props.title2}</Text>
-      <Text fontSize="lg" paddingTop="3" paddingBottom="3" color="gray.700" >{props.desc1}</Text>
+      <Text color="gray.500" fontSize="sm" fontWeight={"medium"}>{purpose}</Text>
+      <Text fontSize="3x1" fontWeight="bold">{title1}<br /> {title2}</Text>
+      <Text fontSize='lg' paddingTop='3' paddingBottom='3' color='gray.700'>{desc1}<br />{desc2}</Text>
       <Button fontSize="xl">
-        <Link href={props.linkName}>{props.buttonText}</Link>
+        <Link href={linkName}>{buttonText}</Link>
       </Button>
     </Box>
   </Flex>
