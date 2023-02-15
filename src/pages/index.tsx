@@ -30,7 +30,7 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, i
   </Flex>
 )
 
-export default function Home({ propertiesForSale, propertiesForRent } : any) {
+const Home = ({ propertiesForSale, propertiesForRent } : any) => {
   return (
     <Box>
       <Banner
@@ -74,3 +74,5 @@ export async function getStaticProps() {
     }
   }
 }
+
+export default Home;
