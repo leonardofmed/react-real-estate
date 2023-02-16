@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Flex, Box, Text, Button } from "@chakra-ui/react";
 
 import Property from "@/components/Property";
-import { baseUrl, fetchApi } from '../utils/fetchApi';
+import FetchAPI from '../utils/fetchApi';
 
 interface BannerProps {
   purpose: string
@@ -62,8 +62,9 @@ const Home = ({ propertiesForSale, propertiesForRent } : any) => (
 )
 
 export async function getStaticProps() {
-  const propertyForSale: any = await fetchApi(`${baseUrl}/properties/list?purpose=for-sale&hitsPerPage=6&locationExternalIDs=5002`);
-  const propertyForRent: any = await fetchApi(`${baseUrl}/properties/list?purpose=for-rent&hitsPerPage=6&locationExternalIDs=5002`);
+  const fetch = new FetchAPI();
+  const propertyForSale: any = await fetch.fetchApi(`${fetch.baseUrl}/properties/list?purpose=for-sale&hitsPerPage=6&locationExternalIDs=5002`);
+  const propertyForRent: any = await fetch.fetchApi(`${fetch.baseUrl}/properties/list?purpose=for-rent&hitsPerPage=6&locationExternalIDs=5002`);
 
   return {
     props: {
